@@ -4,6 +4,19 @@
         <name>BlackCrystal</name>
     </assembly>
     <members>
+        <member name="T:BlackCrystal.Login">
+            <summary>
+            Interaction logic for Login.xaml
+            </summary>
+            <summary>
+            Login
+            </summary>
+        </member>
+        <member name="M:BlackCrystal.Login.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:BlackCrystal.Window1">
             <summary>
             Interaction logic for Window1.xaml
