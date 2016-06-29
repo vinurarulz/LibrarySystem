@@ -14,25 +14,13 @@ using System.Windows.Shapes;
 namespace BlackCrystal
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for ForgetPassword.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class ForgetPassword : Window
     {
-        public Login()
+        public ForgetPassword()
         {
             InitializeComponent();
-        }
-
-        private void chec_fpwd_Checked(object sender, RoutedEventArgs e)
-        {
-            ForgetPassword fp = new ForgetPassword();
-            fp.Show();
-        }
-
-        private void btn_login_Click(object sender, RoutedEventArgs e)
-        {
-            Home h = new Home();
-            h.Show();
         }
     }
 }
