@@ -14,24 +14,13 @@ using System.Windows.Shapes;
 namespace BlackCrystal
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for UserRegistrations.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class UserRegistrations : Window
     {
-        public Login()
+        public UserRegistrations()
         {
             InitializeComponent();
-        }
-
-        private void chec_fpwd_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btn_login_Click(object sender, RoutedEventArgs e)
-        {
-            Home h = new Home();
-            h.Show();
         }
     }
 }

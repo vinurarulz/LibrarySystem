@@ -9,9 +9,9 @@
         Background="{StaticResource LightBackground}">
     <Grid Margin="5,4,-5,-4">
         <Label x:Name="label" Content="User Name :" HorizontalAlignment="Left" Margin="30,81,0,0" VerticalAlignment="Top" Width="91" />
-        <TextBox x:Name="txt_uname" HorizontalAlignment="Left" Height="23" Margin="192,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_uname" HorizontalAlignment="Left" Height="23" Margin="137,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
         <Label x:Name="label1" Content="Password :" HorizontalAlignment="Left" Margin="30,139,0,0" VerticalAlignment="Top" Width="91"/>
-        <TextBox x:Name="txt_pwd" HorizontalAlignment="Left" Height="23" Margin="192,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_pwd" HorizontalAlignment="Left" Height="23" Margin="137,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
         <Button x:Name="btn_login" Content="LOGIN" HorizontalAlignment="Left" Margin="221,208,0,0" VerticalAlignment="Top" Width="91" Click="btn_login_Click" Background="#FF978787" Foreground="#FFA85F5F" Height="28" >
             <Button.Effect>
                 <DropShadowEffect/>
