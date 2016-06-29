@@ -43,6 +43,19 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:BlackCrystal.ResetPassword">
+            <summary>
+            Interaction logic for ResetPassword.xaml
+            </summary>
+            <summary>
+            ResetPassword
+            </summary>
+        </member>
+        <member name="M:BlackCrystal.ResetPassword.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:BlackCrystal.UserRegistrations">
             <summary>
             Interaction logic for UserRegistrations.xaml
