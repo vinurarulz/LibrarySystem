@@ -1,10 +1,60 @@
-﻿<Window x:Class="BlackCrystal.Home"
+﻿<Controls:MetroWindow  
+        x:Class="BlackCrystal.Home"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlackCrystal"
         mc:Ignorable="d"
-        Title="Home" Height="300" Width="300">
-    <Grid/>
-</Window>
+        Title="HOME" Height="768" Width="1366" ShowTitleBar="True" ShowIconOnTitleBar="True" ShowMinButton="True" ShowMaxRestoreButton="True" ShowCloseButton="True"
+        BorderBrush="{DynamicResource AccentColorBrush}"  Background="Black"
+        BorderThickness="3"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="books.ico">
+    <Grid>
+        <Controls:Tile Title="User Registration" 
+                    TiltFactor="4"
+                    Width="120" Height="120" 
+                    Count="" Margin="10,10,1223.6,602.8"
+                       Background="Orange" Click="Tile_Click">
+            <Image x:Name="image2" Height="90" Width="71" Source="pictures/appbar.people.png" Margin="1,-30,1,1"/>
+        </Controls:Tile>
+        <Controls:Tile Title="Employee Registration" 
+                    TiltFactor="4"
+                    Width="120" Height="120" 
+                    Count="" Margin="825,10,408.6,602.8"
+                       Background="Blue">
+            <Image x:Name="image1" Height="90" Width="71" Source="pictures/appbar.page.add.png" Margin="1,-30,1,1"/>
+        </Controls:Tile>
+        <Controls:Tile Title="Book Registration" 
+                    TiltFactor="4"
+                    Width="120" Height="120" 
+                    Count="" Margin="690,10,543.6,602.8"
+                       Background="Red">
+            <Image x:Name="image3" Height="90" Width="71" Source="pictures/appbar.page.search.png" Margin="1,-30,1,1"/>
+        </Controls:Tile>
+        <Controls:Tile Title="Employee Registration" 
+                    TiltFactor="4"
+                    Width="120" Height="120" 
+                    Count="" Margin="145,10,1088.6,602.8"
+                       Background="Magenta" Click="Tile_Click_1">
+            <Image x:Name="image4" Height="90" Width="71" Source="pictures/appbar.user.add.png" Margin="1,-30,1,1"/>
+        </Controls:Tile>
+        <Controls:Tile Title="Book Borrow" 
+                    TiltFactor="4"
+                    Width="120" Height="120" 
+                    Count="" Margin="553,10,680.6,602.8"
+                       Background="Green">
+            <Image x:Name="image5" Height="90" Width="71" Source="pictures/appbar.user.add.png" Margin="1,-30,1,1"/>
+        </Controls:Tile>
+        <Controls:Tile Title="Change Password" 
+                    TiltFactor="4"
+                    Width="120" Height="120" 
+                    Count="" Margin="280,10,953.6,602.8"
+                       Background="Maroon" Click="Tile_Click_2">
+            <Image x:Name="image6" Height="90" Width="71" Source="pictures/appbar.lock.png" Margin="1,-30,1,1"/>
+        </Controls:Tile>
+    </Grid>
+</Controls:MetroWindow>
+
+

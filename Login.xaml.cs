@@ -27,12 +27,14 @@ namespace BlackCrystal
         {
             ForgetPassword fp = new ForgetPassword();
             fp.Show();
+            this.Hide();
         }
 
-        private void btn_login_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
             Home h = new Home();
             h.Show();
+            this.Hide();
         }
     }
 }

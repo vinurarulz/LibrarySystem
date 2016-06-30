@@ -5,20 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlackCrystal"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="412.782"
-        Background="{StaticResource LightBackground}">
-    <Grid Margin="5,4,-5,-4">
-        <Label x:Name="label" Content="User Name :" HorizontalAlignment="Left" Margin="30,81,0,0" VerticalAlignment="Top" Width="91" />
-        <TextBox x:Name="txt_uname" HorizontalAlignment="Left" Height="23" Margin="137,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
-        <Label x:Name="label1" Content="Password :" HorizontalAlignment="Left" Margin="30,139,0,0" VerticalAlignment="Top" Width="91"/>
-        <TextBox x:Name="txt_pwd" HorizontalAlignment="Left" Height="23" Margin="137,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
-        <Button x:Name="btn_login" Content="LOGIN" HorizontalAlignment="Left" Margin="221,208,0,0" VerticalAlignment="Top" Width="91" Click="btn_login_Click" Background="#FF978787" Foreground="#FFA85F5F" Height="28" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Label x:Name="label2" Content="Login" HorizontalAlignment="Left" Margin="100,10,0,0" VerticalAlignment="Top" Width="165" HorizontalContentAlignment="Center" FontSize="24" FontWeight="Bold"/>
-        <CheckBox x:Name="chec_fpwd" Content="Forget Password" HorizontalAlignment="Left" Margin="50,187,0,0" VerticalAlignment="Top" Checked="chec_fpwd_Checked"/>
+        Title="LOGIN" Height="277.6" Width="459.182" 
+       BorderBrush="{DynamicResource AccentColorBrush}"  Background="{StaticResource DarkBackground}"
+        BorderThickness="3"
+        WindowStartupLocation="CenterScreen" Icon="books.ico">
+    <Grid Margin="5,4,3.4,-3.6">
+        <Label x:Name="label" Content="User Name :" HorizontalAlignment="Left" Margin="30,52,0,0" VerticalAlignment="Top" Width="91" Foreground="White"/>
+        <TextBox x:Name="txt_uname" HorizontalAlignment="Left" Height="23" Margin="163,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" />
+        <Label x:Name="label1" Content="Password :" HorizontalAlignment="Left" Margin="30,110,0,0" VerticalAlignment="Top" Width="91" Foreground="White"/>
+        <TextBox x:Name="txt_pwd" HorizontalAlignment="Left" Height="23" Margin="163,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
+        <CheckBox x:Name="chec_fpwd" Content="Forget Password" HorizontalAlignment="Left" Margin="38,179,0,0" VerticalAlignment="Top" Checked="chec_fpwd_Checked" Foreground="White"/>
+        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="299,172,0,0" VerticalAlignment="Top" Width="101" Height="32" Click="button_Click"/>
 
     </Grid>
 </Window>

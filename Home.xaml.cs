@@ -10,17 +10,37 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace BlackCrystal
 {
     /// <summary>
     /// Interaction logic for Home.xaml
     /// </summary>
-    public partial class Home : Window
+    public partial class Home : MetroWindow
+
     {
         public Home()
         {
             InitializeComponent();
+        }
+
+        private void Tile_Click(object sender, RoutedEventArgs e)
+        {
+            new UserRegistrations().Show();
+            //  this.Hide();
+        }
+
+        private void Tile_Click_1(object sender, RoutedEventArgs e)
+        {
+            new EmployeRegistration().Show();
+            // this.Hide();
+        }
+
+        private void Tile_Click_2(object sender, RoutedEventArgs e)
+        {
+            new ResetPassword().Show();
+            // this.Hide();
         }
     }
 }
