@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f2f7c7740ee041cca0b967b7f0320790" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryDBModel.Author" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Barcode" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Book" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.BorrowDetail" Width="1.5" PointX="7.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.BorrowHeader" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Employee" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Fee" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Login" Width="1.5" PointX="5.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.MainCategory" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Penalty" Width="1.5" PointX="7.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Publisher" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Refree" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Register_fee" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Status" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.SubCategory" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.User" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.User_Type" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="LibraryDBModel.FK_Book_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_Barcode_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_Barcode_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_BorrowDetail_Barcode" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_Book_MainCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_Book_Publisher" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_BorrowDetail_BorrowHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_BorrowDetail_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_BorrowHeader_User" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_Penalty_BorrowHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_Login_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_Login_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_SubCategory_MainCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_User_Refree" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_Register_fee_User" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK_User_User_Type" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

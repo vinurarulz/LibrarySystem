@@ -10,6 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DAO;
+using System.Data;
 
 namespace BlackCrystal
 {
@@ -32,9 +34,24 @@ namespace BlackCrystal
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Home h = new Home();
-            h.Show();
-            this.Hide();
+            try
+            {
+                if (new LoginClass().LoginUser(txt_uname.Text, txt_pwd.Text))
+                {
+                    Home h = new Home();
+                    h.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Username or Password !", "Login", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
     }
 }
