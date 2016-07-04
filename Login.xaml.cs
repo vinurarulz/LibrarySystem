@@ -34,7 +34,7 @@ namespace BlackCrystal
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            try
+         /*   try
             {
                 if (new LoginClass().LoginUser(txt_uname.Text, txt_pwd.Text))
                 {
@@ -51,6 +51,10 @@ namespace BlackCrystal
             {
                 throw;
             }
+*/
+            Home h = new Home();
+            h.Show();
+            this.Hide();
 
         }
     }

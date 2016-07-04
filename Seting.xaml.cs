@@ -10,26 +10,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using DAO;
 
 namespace BlackCrystal
 {
     /// <summary>
-    /// Interaction logic for EmployeRegistration.xaml
+    /// Interaction logic for Seting.xaml
     /// </summary>
-    public partial class EmployeRegistration : Window
+    public partial class Seting : Window
     {
-        public EmployeRegistration()
+        public Seting()
         {
             InitializeComponent();
-            var dao = new EmployeeClass();
-
-            txt_emp_id.Text = dao.add();
-        }
-
-        private void btn_save1_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
