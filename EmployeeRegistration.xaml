@@ -85,7 +85,7 @@
             </TabItem>
         </TabControl>
         <DataGrid x:Name="dataGrid1" Margin="0,30,25.6,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="445" HorizontalAlignment="Right" Width="803"/>
-        <Button x:Name="btn_save1" Content="Save" HorizontalAlignment="Left" Margin="9.6,558,0,0" VerticalAlignment="Top" Width="109" Height="34" Click="btn_save1_Click" Grid.Column="1"/>
+        <Button x:Name="btn_save1" Content="Save" HorizontalAlignment="Left" Margin="570,558,0,0" VerticalAlignment="Top" Width="109" Height="34" Click="btn_save1_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="btn_update1" Content="Update" HorizontalAlignment="Left" Margin="148.6,558,0,0" VerticalAlignment="Top" Width="110" Height="34" Grid.Column="1" Click="btn_update1_Click"/>
 
     </Grid>
