@@ -69,6 +69,19 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:BlackCrystal.Test">
+            <summary>
+            Interaction logic for Test.xaml
+            </summary>
+            <summary>
+            Test
+            </summary>
+        </member>
+        <member name="M:BlackCrystal.Test.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:BlackCrystal.UserRegistrations">
             <summary>
             Interaction logic for UserRegistrations.xaml

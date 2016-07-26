@@ -1,0 +1,17 @@
+﻿<Window x:Class="BlackCrystal.Test"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackCrystal"
+        mc:Ignorable="d"
+        BorderBrush="{DynamicResource AccentColorBrush}"  Background="{StaticResource DarkBackground}"
+        Title="Test" Height="318.956" Width="374.176">
+    <Grid>
+        <Button x:Name="button1" Content="Update" HorizontalAlignment="Left" Margin="146,92,0,0" VerticalAlignment="Top" Width="75" Height="32" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Delete" HorizontalAlignment="Left" Margin="146,154,0,0" VerticalAlignment="Top" Width="75" Height="32" RenderTransformOrigin="0.052,0.273" Click="button2_Click"/>
+        <Button x:Name="button3" Content="Search" HorizontalAlignment="Left" Margin="146,208,0,0" VerticalAlignment="Top" Width="75" Height="32" Click="button3_Click"/>
+        <Button x:Name="button" Content="Insert" HorizontalAlignment="Left" Margin="146,39,0,0" VerticalAlignment="Top" Width="75" Height="32" Click="button_Click"/>
+
+    </Grid>
+</Window>

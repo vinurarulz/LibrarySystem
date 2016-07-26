@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BlackCrystal.Properties {
+namespace DAO.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -27,21 +27,10 @@ namespace BlackCrystal.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=legendsy.database.windows.net;Initial Catalog=LibraryDB;Persist Secur" +
-            "ity Info=True;User ID=testAddmin")]
+            "ity Info=True;User ID=testAddmin;Password=pass@123")]
         public string LibraryDBConnectionString {
             get {
                 return ((string)(this["LibraryDBConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=legendsy.database.windows.net;Initial Catalog=LibraryDB;Persist Secur" +
-            "ity Info=True;User ID=testAddmin;Password=pass@123")]
-        public string LibraryDBConnectionString1 {
-            get {
-                return ((string)(this["LibraryDBConnectionString1"]));
             }
         }
     }

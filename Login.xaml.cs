@@ -34,23 +34,7 @@ namespace BlackCrystal
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                if (new LoginClass().LoginUser(txt_uname.Text, txt_pwd.Text))
-                {
-                    Home h = new Home();
-                    h.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Incorrect Username or Password !", "Login", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+
 
         }
     }
