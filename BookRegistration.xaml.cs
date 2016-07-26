@@ -10,29 +10,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using DAO;
 
 namespace BlackCrystal
 {
     /// <summary>
-    /// Interaction logic for EmployeRegistration.xaml
+    /// Interaction logic for BookRegistration.xaml
     /// </summary>
-    public partial class EmployeRegistration : Window
+    public partial class BookRegistration : Window
     {
-        public EmployeRegistration()
+        public BookRegistration()
         {
             InitializeComponent();
-
-        }
-
-        private void btn_save1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        private void btn_update1_Click(object sender, RoutedEventArgs e)
-        {
         }
     }
 }
