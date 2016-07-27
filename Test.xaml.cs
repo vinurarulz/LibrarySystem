@@ -121,12 +121,28 @@ namespace BlackCrystal
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
+            //try
+            //{
+            //    using (DB_ClassDataContext db = new DB_ClassDataContext())
+            //    {
+            //        Employee lg = db.Employees.SingleOrDefault(x => x.Emp_ID == 4);
+            //        db.Employees.DeleteOnSubmit(lg);
+            //        db.SubmitChanges();
+
+            //        MessageBox.Show("Data Deleted Successfully");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("" + ex);
+            //}
+
             try
             {
                 using (DB_ClassDataContext db = new DB_ClassDataContext())
                 {
-                    Employee lg = db.Employees.SingleOrDefault(x => x.Emp_ID == 4);
-                    db.Employees.DeleteOnSubmit(lg);
+                    Status lg = db.Status.SingleOrDefault(x => x.Status_ID == 6);
+                    db.Status.DeleteOnSubmit(lg);
                     db.SubmitChanges();
 
                     MessageBox.Show("Data Deleted Successfully");

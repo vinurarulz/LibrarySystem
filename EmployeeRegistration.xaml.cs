@@ -22,16 +22,30 @@ namespace BlackCrystal
         public EmployeRegistration()
         {
             InitializeComponent();
+            //using (DB_ClassDataContext db = new DB_ClassDataContext())
+            //{
+
+            //    dataGrid1.ItemsSource = db.Employees;
+                
+                
+
+            //}
+            //value set combo box
+
+            try { 
             using (DB_ClassDataContext db = new DB_ClassDataContext())
             {
+                var user = (from u in db.Employees
 
-                dataGrid1.ItemsSource = db.Employees;
-                
-                
+                            select u.FName).SingleOrDefault().ToList();
+                    combo_status.Items.Add(user);
 
             }
-                
 
+            }catch(Exception ex)
+            {
+
+            }
         }
 
         int empid;
