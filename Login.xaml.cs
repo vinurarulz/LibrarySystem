@@ -32,10 +32,13 @@ namespace BlackCrystal
             this.Hide();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        
+
+        private void btn_login_Click(object sender, RoutedEventArgs e)
         {
-
-
+            EmployeRegistration emp = new EmployeRegistration();
+            emp.Show();
+            this.Hide();
         }
     }
 }

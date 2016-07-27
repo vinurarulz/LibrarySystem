@@ -13,7 +13,7 @@ namespace DAO
             {
                 using (var db=new LibraryDBEntities())
                 {
-                    var employee = new Employee() { Emp_NIC = e_nic, FName = e_fname, LName = e_lname, Tel = e_contac, Email = e_email, Add1 = e_add1, Add2 = e_add2, Add3 = e_add3, } ;
+                    var employee = new Employee() { Emp_NIC = e_nic, FName = e_fname, LName = e_lname, Tel = e_contac, Email = e_email, Add1 = e_add1, Add2 = e_add2, Add3 = e_add3} ;
                     var employee_login = new Login() { Emp_ID = e_id };
                     db.Employees.Add(employee);
                     db.SaveChanges();
@@ -30,13 +30,18 @@ namespace DAO
         public string add()
         {
 
-            string result="";
+            String value = "";
             try
             {
                 using (var db = new LibraryDBEntities())
                 {
                     var eployee = new Employee();
-                    result = eployee.Emp_ID.ToString();
+                   
+
+                      value = db.Employees
+                            .OrderByDescending(p => p.Emp_ID)
+                            .Select(r => r.Emp_ID)
+                            .First().ToString();
                 }
             }
             catch(Exception ex)
@@ -44,7 +49,7 @@ namespace DAO
 
             }
 
-            return result;
+            return value;
         }
     }
 }
