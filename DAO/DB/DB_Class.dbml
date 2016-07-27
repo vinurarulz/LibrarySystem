@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LibraryDB" Class="DB_ClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=legendsy.database.windows.net;Initial Catalog=LibraryDB;Persist Security Info=True;User ID=testAddmin" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="LibraryDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.User_Type" Member="User_Types">
+    <Type Name="User_Type">
+      <Column Name="User_Type_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_Type" Member="User_Type1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="User_Type_User" Member="Users" ThisKey="User_Type_ID" OtherKey="User_Type_ID" Type="User" />
+    </Type>
+  </Table>
   <Table Name="dbo.Author" Member="Authors">
     <Type Name="Author">
       <Column Name="Author_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Author" Member="Author1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Association Name="Author_Book" Member="Books" ThisKey="Author_ID" OtherKey="Author_ID" Type="Book" />
-    </Type>
-  </Table>
-  <Table Name="dbo.User_Type" Member="User_Types">
-    <Type Name="User_Type">
-      <Column Name="User_Type_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="User_Type" Member="User_Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="User_Type_User" Member="Users" ThisKey="User_Type_ID" OtherKey="User_Type_ID" Type="User" />
     </Type>
   </Table>
   <Table Name="dbo.Barcode" Member="Barcodes">
@@ -78,17 +78,18 @@
   <Table Name="dbo.Fee" Member="Fees">
     <Type Name="Fee">
       <Column Name="Fee_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Register_fee" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="Penalty_fee" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="Register_fee" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Penalty_fee" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Login" Member="Loginzs">
     <Type Name="Loginz">
       <Column Name="Login_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="Pwd" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pwd" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="Emp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Status_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Type_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Employee_Login" Member="Employee" ThisKey="Emp_ID" OtherKey="Emp_ID" Type="Employee" IsForeignKey="true" />
       <Association Name="Status_Login" Member="Status" ThisKey="Status_ID" OtherKey="Status_ID" Type="Status" IsForeignKey="true" />
     </Type>
@@ -105,7 +106,7 @@
     <Type Name="Penalty">
       <Column Name="Penalty_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="LateDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Penalty_Amount" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="Penalty_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="BorrowHeader_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="BorrowHeader_Penalty" Member="BorrowHeader" ThisKey="BorrowHeader_ID" OtherKey="BorrowHeader_ID" Type="BorrowHeader" IsForeignKey="true" />
     </Type>
@@ -139,7 +140,7 @@
     <Type Name="Register_fee">
       <Column Name="Register_fee_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Register_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Register_fee" Member="Register_fee1" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="Register_fee" Member="Register_fee1" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="User_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="User_Register_fee" Member="User" ThisKey="User_ID" OtherKey="User_ID" Type="User" IsForeignKey="true" />
     </Type>
@@ -159,6 +160,15 @@
       <Column Name="SubCategory" Member="SubCategory1" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="MainCategory_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="MainCategory_SubCategory" Member="MainCategory" ThisKey="MainCategory_ID" OtherKey="MainCategory_ID" Type="MainCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sysdiagrams" Member="sysdiagrams">
+    <Type Name="sysdiagram">
+      <Column Name="name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="principal_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="diagram_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="definition" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.[User]" Member="Users">

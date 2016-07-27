@@ -10,8 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using DAO;
 using System.Data;
+using DAO.DB;
 
 namespace BlackCrystal
 {
@@ -32,13 +32,28 @@ namespace BlackCrystal
             this.Hide();
         }
 
-        
-
-        private void btn_login_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
-            EmployeRegistration emp = new EmployeRegistration();
-            emp.Show();
-            this.Hide();
+            try
+            {
+                using (DB_ClassDataContext db = new DB_ClassDataContext())
+                {
+                    Loginz lg = db.Loginzs.FirstOrDefault(x => x.UserName == txt_uname.Text && x.Pwd == txt_pwd.Text);
+
+                    if (!lg.Equals(null))
+                    {
+                        Home hm = new Home();
+                        hm.Show();
+                        this.Hide();
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("UserName or Password has been wrong !", "Login", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
     }
 }

@@ -8,7 +8,7 @@
         Title="User Registrations" Height="687.2" Width="1366"
         BorderBrush="{DynamicResource AccentColorBrush}"  Background="{StaticResource DarkBackground}"
         BorderThickness="3"
-        WindowStartupLocation="CenterScreen" Icon="books.ico">
+        WindowStartupLocation="CenterScreen" Icon="books.ico" Loaded="Window_Loaded">
     <Grid>
         <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="585,561,0,0" VerticalAlignment="Top" Width="101" Height="34" Click="btn_save_Click"/>
         <Button x:Name="btn_update" Content="Update" HorizontalAlignment="Left" Margin="751,561,0,0" VerticalAlignment="Top" Width="110" Height="34"/>
@@ -22,24 +22,26 @@
                     <Label x:Name="label" Content="Employe ID :" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="97" Grid.ColumnSpan="2"/>
                     <Label x:Name="label_Copy" Content="Employe Name :" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="97" Grid.ColumnSpan="2"/>
                     <Label x:Name="label_Copy1" Content="Contact no (Hand) :" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="109" Grid.ColumnSpan="2"/>
-                    <Label x:Name="label_Copy2" Content="Email :" HorizontalAlignment="Left" Margin="11,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="97" Grid.ColumnSpan="2"/>
-                    <Label x:Name="label_Copy3" Content="Address 1 :" HorizontalAlignment="Left" Margin="11,242,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="96" Grid.ColumnSpan="2"/>
-                    <Label x:Name="label_Copy4" Content="Address  2 :" HorizontalAlignment="Left" Margin="10,273,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="97" Grid.ColumnSpan="2"/>
-                    <Label x:Name="label_Copy5" Content="Address 3 :" HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="97" Grid.ColumnSpan="2"/>
-                    <Label x:Name="label_Copy9" Content="Status :" HorizontalAlignment="Left" Margin="11,335,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="97" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="txt_emp_id" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46,83,0,0" Grid.Column="1"/>
-                    <TextBox x:Name="txt_add3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46.4,308,0,0" Grid.Column="1"/>
-                    <TextBox x:Name="txt_add2" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46.4,275,0,0" Grid.Column="1"/>
-                    <TextBox x:Name="txt_add1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46.4,243,0,0" Grid.Column="1"/>
-                    <TextBox x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46.4,212,0,0" Grid.Column="1"/>
-                    <TextBox x:Name="txt_contac" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46,146,0,0" Grid.Column="1"/>
-                    <TextBox x:Name="txt_emp_name" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46,115,0,0" Grid.Column="1"/>
-                    <ComboBox x:Name="combo_status" HorizontalAlignment="Left" Margin="46.4,339,0,0" VerticalAlignment="Top" Width="245" Height="22" ToolTip="" Grid.Column="1"/>
+                    <Label x:Name="label_Copy2" Content="Email :" HorizontalAlignment="Left" Margin="11,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="97" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label_Copy3" Content="Address 1 :" HorizontalAlignment="Left" Margin="11,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="96" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label_Copy4" Content="Address  2 :" HorizontalAlignment="Left" Margin="10,311,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="97" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label_Copy5" Content="Address 3 :" HorizontalAlignment="Left" Margin="10,343,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="97" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label_Copy9" Content="Status :" HorizontalAlignment="Left" Margin="11,373,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="97" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txt_user_id" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46,83,0,0" Grid.Column="1" />
+                    <TextBox x:Name="txt_add3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46.4,346,0,0" Grid.Column="1"/>
+                    <TextBox x:Name="txt_add2" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46.4,313,0,0" Grid.Column="1"/>
+                    <TextBox x:Name="txt_add1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46.4,281,0,0" Grid.Column="1"/>
+                    <TextBox x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46.4,250,0,0" Grid.Column="1"/>
+                    <TextBox x:Name="txt_telhand" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46,146,0,0" Grid.Column="1"/>
+                    <TextBox x:Name="txt_emp_name" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46,115,0,0" Grid.Column="1"/>
+                    <ComboBox x:Name="combo_status" HorizontalAlignment="Left" Margin="46.4,377,0,0" VerticalAlignment="Top" Width="245" Height="22" ToolTip="" Grid.Column="1"/>
                     <Button x:Name="btn_search" Content="Search" HorizontalAlignment="Left" Margin="311.4,111,0,0" VerticalAlignment="Top" Width="52" Height="27" Grid.Column="1" RenderTransformOrigin="1.99,0.403"/>
                     <Label x:Name="title" Content="User Details" HorizontalAlignment="Left" Margin="46.4,10,0,0" VerticalAlignment="Top" Width="252" Height="52"  HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" FontSize="24" Grid.Column="1"/>
                     <Button x:Name="btn_search_Copy" Content="Search" HorizontalAlignment="Left" Margin="311.4,80,0,0" VerticalAlignment="Top" Width="52" Height="27" Grid.Column="1" RenderTransformOrigin="1.99,0.403"/>
                     <Label x:Name="label_Copy6" Content="Contact no (Land) :" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="109" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="txt_contac_Copy" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46.4,179,0,0" Grid.Column="1"/>
+                    <TextBox x:Name="txt_telland" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46.4,179,0,0" Grid.Column="1"/>
+                    <Label x:Name="label_Copy7" Content="DOB :" HorizontalAlignment="Left" Margin="11,214,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="97" Grid.ColumnSpan="2"/>
+                    <DatePicker x:Name="datepicker_DOB" Grid.Column="1" HorizontalAlignment="Left" Margin="46.4,214,0,0" VerticalAlignment="Top" Width="245"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="tab_refree" Header="Refree" Margin="3,0,-7,-2">

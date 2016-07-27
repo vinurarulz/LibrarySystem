@@ -13,9 +13,9 @@
         <Label x:Name="label" Content="User Name :" HorizontalAlignment="Left" Margin="30,52,0,0" VerticalAlignment="Top" Width="91" Foreground="White"/>
         <TextBox x:Name="txt_uname" HorizontalAlignment="Left" Height="23" Margin="163,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" />
         <Label x:Name="label1" Content="Password :" HorizontalAlignment="Left" Margin="30,110,0,0" VerticalAlignment="Top" Width="91" Foreground="White"/>
-        <TextBox x:Name="txt_pwd" HorizontalAlignment="Left" Height="23" Margin="163,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
+        <TextBox x:Name="txt_pwd" HorizontalAlignment="Left" Height="23" Margin="163,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" FontFamily="Segoe MDL2 Assets"/>
         <CheckBox x:Name="chec_fpwd" Content="Forget Password" HorizontalAlignment="Left" Margin="38,179,0,0" VerticalAlignment="Top" Checked="chec_fpwd_Checked" Foreground="White"/>
-        <Button x:Name="btn_login" Content="Login" HorizontalAlignment="Left" Margin="299,172,0,0" VerticalAlignment="Top" Width="101" Height="32" Click="btn_login_Click"/>
+        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="299,172,0,0" VerticalAlignment="Top" Width="101" Height="32" Click="button_Click"/>
 
     </Grid>
 </Window>

@@ -39,7 +39,7 @@ namespace BlackCrystal
 
         private void Tile_Click_2(object sender, RoutedEventArgs e)
         {
-            new ResetPassword().Show();
+            new ResetPassword("").Show();
             // this.Hide();
         }
     }
