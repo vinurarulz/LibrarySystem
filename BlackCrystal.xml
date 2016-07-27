@@ -4,6 +4,19 @@
         <name>BlackCrystal</name>
     </assembly>
     <members>
+        <member name="T:BlackCrystal.BookRegistration">
+            <summary>
+            Interaction logic for BookRegistration.xaml
+            </summary>
+            <summary>
+            BookRegistration
+            </summary>
+        </member>
+        <member name="M:BlackCrystal.BookRegistration.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:BlackCrystal.EmployeRegistration">
             <summary>
             Interaction logic for EmployeRegistration.xaml

@@ -22,6 +22,15 @@ namespace BlackCrystal
         public EmployeRegistration()
         {
             InitializeComponent();
+            using (DB_ClassDataContext db = new DB_ClassDataContext())
+            {
+
+                dataGrid1.ItemsSource = db.Employees;
+                
+                
+
+            }
+                
 
         }
 
@@ -47,7 +56,7 @@ namespace BlackCrystal
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            empid = Convert.ToInt16(txt_emp_id);
+            empid = Convert.ToInt32(txt_emp_id.Text);
             nic = txt_nic.Text;
             fname = txt_fname.Text;
             lname = txt_lname.Text;
@@ -59,17 +68,19 @@ namespace BlackCrystal
 
             uname = txt_uname.Text;
             pwd = txt_pwd.Text;
-            status_discrip = combo_status.SelectedItem.ToString();
+           // status_discrip = combo_status.SelectedItem.ToString();
             
 
             try
             {
                 using (DB_ClassDataContext db = new DB_ClassDataContext())
                 {
-                    //  Employee emp = db.Employees.SingleOrDefault(x => x.Emp_ID == empid);
-                    Employee emp = db.Employees.SingleOrDefault();
+                    
+                    Employee emp =new Employee();
+                    Loginz log = new Loginz();
                     Status st = db.Status.SingleOrDefault(x => x.Status1 == status_discrip);
-                   
+
+
                     emp.Emp_NIC = nic;
                     emp.FName = fname;
                     emp.LName = lname;
@@ -78,20 +89,22 @@ namespace BlackCrystal
                     emp.Add1 = add1;
                     emp.Add2 = add2;
                     emp.Add3 = add3;
-                    Loginz log = new Loginz();
-                    log.UserName = uname;
-                    log.Pwd = pwd;
-                    log.Emp_ID = emp.Emp_ID;
-                    log.Status_ID = st.Status_ID;
-                    db.Employees.InsertOnSubmit(emp);
-                    db.Loginzs.InsertOnSubmit(log);
-                    db.SubmitChanges();
+                   
+                   log.UserName = uname;
+                   log.Pwd = pwd;
+                   log.Emp_ID = emp.Emp_ID;
+                   log.Status_ID = st.Status_ID;
+                   db.Employees.InsertOnSubmit(emp);
+                   db.Loginzs.InsertOnSubmit(log);
+                   db.SubmitChanges();
+
+                    MessageBox.Show("Data succusfuly Inserted");
                 }
 
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show("Data not Inserted");
             }
 
         }

@@ -12,6 +12,8 @@
         <Button x:Name="button2" Content="Delete" HorizontalAlignment="Left" Margin="146,154,0,0" VerticalAlignment="Top" Width="75" Height="32" RenderTransformOrigin="0.052,0.273" Click="button2_Click"/>
         <Button x:Name="button3" Content="Search" HorizontalAlignment="Left" Margin="146,208,0,0" VerticalAlignment="Top" Width="75" Height="32" Click="button3_Click"/>
         <Button x:Name="button" Content="Insert" HorizontalAlignment="Left" Margin="146,39,0,0" VerticalAlignment="Top" Width="75" Height="32" Click="button_Click"/>
+        <Button x:Name="button4" Content="Button" HorizontalAlignment="Left" Margin="251,92,0,0" VerticalAlignment="Top" Width="75" Height="32" Click="button4_Click"/>
+        <TextBox x:Name="txt_email" HorizontalAlignment="Left" Height="23" Margin="236,141,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

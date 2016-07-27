@@ -22,5 +22,10 @@ namespace BlackCrystal
         {
             InitializeComponent();
         }
+
+        private void btn_save_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

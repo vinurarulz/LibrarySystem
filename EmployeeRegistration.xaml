@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="dataGrid1" Margin="0,30,25.6,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="445" HorizontalAlignment="Right" Width="803"/>
         <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="570,558,0,0" VerticalAlignment="Top" Width="109" Height="34" Click="btn_save_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="btn_update1" Content="Update" HorizontalAlignment="Left" Margin="148.6,558,0,0" VerticalAlignment="Top" Width="110" Height="34" Grid.Column="1" Click="btn_update1_Click"/>
+        <Button x:Name="btn_update1" Content="Update" HorizontalAlignment="Left" Margin="309,558,0,0" VerticalAlignment="Top" Width="110" Height="34" Grid.Column="1" Click="btn_update1_Click"/>
         <Canvas HorizontalAlignment="Left" Height="523" Margin="10,10,0,0" VerticalAlignment="Top" Width="483">
             <Label x:Name="label" Content="Employe ID :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="100" Canvas.Left="10" Canvas.Top="77"/>
             <Label x:Name="label_Copy" Content="First Name :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="100" Canvas.Left="11" Canvas.Top="138"/>
@@ -40,15 +40,16 @@
             <TextBox x:Name="txt_email" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="251" Canvas.Left="148" Canvas.Top="223"/>
             <TextBox x:Name="txt_contac" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="251" Canvas.Left="148" Canvas.Top="195"/>
             <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="251" Canvas.Left="148" Canvas.Top="138"/>
-            <ComboBox x:Name="combo_status" HorizontalAlignment="Left" VerticalAlignment="Top" Width="251" Height="22" ToolTip="" Canvas.Left="148" Canvas.Top="431" ContextMenuClosing="combo_status_ContextMenuClosing"/>
+            <ComboBox x:Name="combo_status" HorizontalAlignment="Left" VerticalAlignment="Top" Width="251" Height="22" ToolTip="" Canvas.Left="148" Canvas.Top="431"/>
             <Button x:Name="btn_search" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="27" RenderTransformOrigin="1.99,0.403" Canvas.Left="420" Canvas.Top="150"/>
             <Label x:Name="title" Content="Employee Details" HorizontalAlignment="Left" VerticalAlignment="Top" Width="258" Height="51"  HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" FontSize="24" Canvas.Left="148" Canvas.Top="10"/>
-            <Button x:Name="btn_search_Copy" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="27" RenderTransformOrigin="1.99,0.403" Canvas.Left="420" Canvas.Top="120"/>
+            <Button x:Name="btn_search_Copy" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="27" RenderTransformOrigin="1.99,0.403" Canvas.Left="420" Canvas.Top="109"/>
             <Label x:Name="label1" Content="Employee NIC :" Canvas.Left="11" Canvas.Top="110" Width="99"/>
             <TextBox x:Name="txt_nic" Height="23" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="110" Width="251"/>
             <Label x:Name="label2" Content="Last Name&#xD;&#xA;" Canvas.Left="12" Canvas.Top="164" Width="98" Height="26"/>
             <TextBox x:Name="txt_lname" Height="23" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="167" Width="251"/>
         </Canvas>
+        <Button x:Name="button" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="177,558,0,0" VerticalAlignment="Top" Width="109" Height="34"/>
 
     </Grid>
 </Window>

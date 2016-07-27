@@ -10,7 +10,7 @@
         BorderThickness="3"
         WindowStartupLocation="CenterScreen" Icon="books.ico">
     <Grid>
-        <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="585,561,0,0" VerticalAlignment="Top" Width="101" Height="34"/>
+        <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="585,561,0,0" VerticalAlignment="Top" Width="101" Height="34" Click="btn_save_Click"/>
         <Button x:Name="btn_update" Content="Update" HorizontalAlignment="Left" Margin="751,561,0,0" VerticalAlignment="Top" Width="110" Height="34"/>
         <TabControl x:Name="tabControl" Height="465" VerticalAlignment="Top" HorizontalAlignment="Left" Width="496" Margin="10,10,0,0">
             <TabItem x:Name="tab_user" Header="User">
