@@ -42,5 +42,17 @@ namespace BlackCrystal
             new ResetPassword("").Show();
             // this.Hide();
         }
+
+        private void Tile_Click_3(object sender, RoutedEventArgs e)
+        {
+            BookRegistration br = new BookRegistration();
+            br.Show();
+        }
+
+        private void Tile_Click_4(object sender, RoutedEventArgs e)
+        {
+            Test t = new Test();
+            t.Show();
+        }
     }
 }

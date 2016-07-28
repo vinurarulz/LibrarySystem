@@ -23,90 +23,77 @@ namespace BlackCrystal
         public BookRegistration()
         {
             InitializeComponent();
-            using (DB_ClassDataContext db = new DB_ClassDataContext())
+            com__main_catagory.Items.Add("History");
+            com_Sub_Category.Items.Add("History of Srilanka");
+            try
             {
-                var user = (from u in db.MainCategories 
-                           
-                            select u.MainCategory1).SingleOrDefault();
-                com__main_catagory.Items.Add(user);
-
+                using (DB_ClassDataContext db = new DB_ClassDataContext())
+                {
+                    var maxValue = db.Books.Max(x => x.Book_ID);
+                    txt_bookid.Text = (maxValue + 1).ToString();
+                  
+                }
+            }
+            catch (Exception)
+            {
+               
             }
         }
 
-        int bid;
-        string bname;
-        decimal price;
-        string auther;
-        int aid;
-        string main_category;
-        int main_catogry_id;
-        string sub_category;
-        int sub_category_id;
+        int auther_id;
+      
 
-        int pid;
-        string publisher;
-        string pub_email;
-        string pub_tell;
-        string pub_add1;
-        string pub_add2;
-        string pub_add3;
+       
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
-        {
+        {                    
 
-
-
-
-            using (DB_ClassDataContext db = new DB_ClassDataContext())
+            try
             {
-                try
+                using (DB_ClassDataContext db = new DB_ClassDataContext())
                 {
-                    Book au = db.Books.SingleOrDefault(x => x.BName == txt_bookname.Text);
-                    MessageBox.Show("already exits");
+
+                    Book bk = db.Books.SingleOrDefault();
+                    Author au = db.Authors.SingleOrDefault(x => x.Author1 == txt_auther.Text);
+                    SubCategory sub_ctgry = db.SubCategories.SingleOrDefault(x => x.SubCategory1 == com_Sub_Category.SelectedItem.ToString());
+                    if (au == null)
+                    {
+                        au.Author1 = txt_auther.Text;
+                        auther_id = au.Author_ID;
+                        db.Authors.InsertOnSubmit(au);
+                        db.SubmitChanges();
+                    }
+                    else
+                    {
+                        auther_id = au.Author_ID;
+                    }
+                   
+                   
+
+                    if (bk==null)
+                    {   
+                        bk.BName = txt_bookname.Text;
+                        bk.Price = Convert.ToDecimal(txt_bookprice.Text);
+                        bk.Author_ID =auther_id ;                       
+                        bk.MainCategory_ID = sub_ctgry.MainCategory_ID;
+                        db.Books.InsertOnSubmit(bk);
+                        db.SubmitChanges();
+                        MessageBox.Show("Data Inserted Succusfuly", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                      //  genarate barcord an save data base
+                    }
+                    else
+                    {
+                    //genarate barcord an save data base
+                    }
+
+
                 }
-               catch (Exception ex)
-                {
-                    MessageBox.Show("" + ex);
-                }
-
             }
-                //bname = txt_bookname.Text;
-                //price = Convert.ToDecimal(txt_bookprice.Text);
-                //auther = txt_auther.Text;
-                //main_category = com__main_catagory.SelectedItem.ToString();
-                //sub_category = com_Sub_Category.SelectedItem.ToString();
-                //publisher = txt_publisher.Text;
-                //pub_email = txt_pub_email.Text;
-                //pub_tell = txt_pub_contac.Text;
-                //pub_add1 = txt_pub_add1.Text;
-                //pub_add2 = txt_pub_add2.Text;
-                //pub_add3 = txt_pub_add3.Text;
-
-                //try
-                //{
-                //    using (DB_ClassDataContext db = new DB_ClassDataContext())
-                //    {
-
-                //      Book bk = db.Books.SingleOrDefault();
-                //        Author au = db.Authors.SingleOrDefault(x => x.Author1 == auther);
-                //        Publisher pub = db.Publishers.SingleOrDefault(x => x.Publisher1 == publisher);
-                //        MainCategory mc = db.MainCategories.SingleOrDefault(x => x.MainCategory1 == main_category);
-                //        if (!bk.BName.Equals(bname))
-                //        {
-                //            bk.BName = bname;
-                //            bk.Price = price;
-                //            bk.Author_ID = au.Author_ID;
-                //            bk.Publisher_ID = pub.Publisher_ID;
-                //            bk.MainCategory_ID = mc.MainCategory_ID;
-                //        }
-
-
-                //    }
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show("" + ex);
-                //}
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not Inserted" + ex);
             }
+        }
     }
 }

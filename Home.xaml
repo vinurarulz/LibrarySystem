@@ -21,16 +21,16 @@
         </Controls:Tile>
         <Controls:Tile Title="Employee Registration" 
                     TiltFactor="4"
-                    Width="120" Height="120" 
-                    Count="" Margin="825,10,408.6,602.8"
-                       Background="Blue">
+                    Width="120" Height="Auto" 
+                    Count="" Margin="826,10,406,578"
+                       Background="Blue" Click="Tile_Click_4">
             <Image x:Name="image1" Height="90" Width="71" Source="pictures/appbar.page.add.png" Margin="1,-30,1,1"/>
         </Controls:Tile>
         <Controls:Tile Title="Book Registration" 
                     TiltFactor="4"
-                    Width="120" Height="120" 
-                    Count="" Margin="690,10,543.6,602.8"
-                       Background="Red">
+                    Width="120" Height="Auto" 
+                    Count="" Margin="690,10,542,578"
+                       Background="Red" Click="Tile_Click_3">
             <Image x:Name="image3" Height="90" Width="71" Source="pictures/appbar.page.search.png" Margin="1,-30,1,1"/>
         </Controls:Tile>
         <Controls:Tile Title="Employee Registration" 

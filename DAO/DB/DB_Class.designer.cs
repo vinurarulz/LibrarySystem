@@ -30,12 +30,12 @@ namespace DAO.DB
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertUser_Type(User_Type instance);
-    partial void UpdateUser_Type(User_Type instance);
-    partial void DeleteUser_Type(User_Type instance);
     partial void InsertAuthor(Author instance);
     partial void UpdateAuthor(Author instance);
     partial void DeleteAuthor(Author instance);
+    partial void InsertUser_Type(User_Type instance);
+    partial void UpdateUser_Type(User_Type instance);
+    partial void DeleteUser_Type(User_Type instance);
     partial void InsertBarcode(Barcode instance);
     partial void UpdateBarcode(Barcode instance);
     partial void DeleteBarcode(Barcode instance);
@@ -78,16 +78,13 @@ namespace DAO.DB
     partial void InsertSubCategory(SubCategory instance);
     partial void UpdateSubCategory(SubCategory instance);
     partial void DeleteSubCategory(SubCategory instance);
-    partial void Insertsysdiagram(sysdiagram instance);
-    partial void Updatesysdiagram(sysdiagram instance);
-    partial void Deletesysdiagram(sysdiagram instance);
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
     #endregion
 		
 		public DB_ClassDataContext() : 
-				base(global::DAO.Properties.Settings.Default.LibraryDBConnectionString, mappingSource)
+				base(global::DAO.Properties.Settings.Default.LibraryDBConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -116,19 +113,19 @@ namespace DAO.DB
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<User_Type> User_Types
-		{
-			get
-			{
-				return this.GetTable<User_Type>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Author> Authors
 		{
 			get
 			{
 				return this.GetTable<Author>();
+			}
+		}
+		
+		public System.Data.Linq.Table<User_Type> User_Types
+		{
+			get
+			{
+				return this.GetTable<User_Type>();
 			}
 		}
 		
@@ -244,134 +241,12 @@ namespace DAO.DB
 			}
 		}
 		
-		public System.Data.Linq.Table<sysdiagram> sysdiagrams
-		{
-			get
-			{
-				return this.GetTable<sysdiagram>();
-			}
-		}
-		
 		public System.Data.Linq.Table<User> Users
 		{
 			get
 			{
 				return this.GetTable<User>();
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.User_Type")]
-	public partial class User_Type : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _User_Type_ID;
-		
-		private string _User_Type1;
-		
-		private EntitySet<User> _Users;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUser_Type_IDChanging(int value);
-    partial void OnUser_Type_IDChanged();
-    partial void OnUser_Type1Changing(string value);
-    partial void OnUser_Type1Changed();
-    #endregion
-		
-		public User_Type()
-		{
-			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Type_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int User_Type_ID
-		{
-			get
-			{
-				return this._User_Type_ID;
-			}
-			set
-			{
-				if ((this._User_Type_ID != value))
-				{
-					this.OnUser_Type_IDChanging(value);
-					this.SendPropertyChanging();
-					this._User_Type_ID = value;
-					this.SendPropertyChanged("User_Type_ID");
-					this.OnUser_Type_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="User_Type", Storage="_User_Type1", DbType="NVarChar(10)")]
-		public string User_Type1
-		{
-			get
-			{
-				return this._User_Type1;
-			}
-			set
-			{
-				if ((this._User_Type1 != value))
-				{
-					this.OnUser_Type1Changing(value);
-					this.SendPropertyChanging();
-					this._User_Type1 = value;
-					this.SendPropertyChanged("User_Type1");
-					this.OnUser_Type1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Type_User", Storage="_Users", ThisKey="User_Type_ID", OtherKey="User_Type_ID")]
-		public EntitySet<User> Users
-		{
-			get
-			{
-				return this._Users;
-			}
-			set
-			{
-				this._Users.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Users(User entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Type = this;
-		}
-		
-		private void detach_Users(User entity)
-		{
-			this.SendPropertyChanging();
-			entity.User_Type = null;
 		}
 	}
 	
@@ -486,6 +361,120 @@ namespace DAO.DB
 		{
 			this.SendPropertyChanging();
 			entity.Author = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.User_Type")]
+	public partial class User_Type : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _User_Type_ID;
+		
+		private string _User_Type1;
+		
+		private EntitySet<User> _Users;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUser_Type_IDChanging(int value);
+    partial void OnUser_Type_IDChanged();
+    partial void OnUser_Type1Changing(string value);
+    partial void OnUser_Type1Changed();
+    #endregion
+		
+		public User_Type()
+		{
+			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Type_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int User_Type_ID
+		{
+			get
+			{
+				return this._User_Type_ID;
+			}
+			set
+			{
+				if ((this._User_Type_ID != value))
+				{
+					this.OnUser_Type_IDChanging(value);
+					this.SendPropertyChanging();
+					this._User_Type_ID = value;
+					this.SendPropertyChanged("User_Type_ID");
+					this.OnUser_Type_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="User_Type", Storage="_User_Type1", DbType="NVarChar(10)")]
+		public string User_Type1
+		{
+			get
+			{
+				return this._User_Type1;
+			}
+			set
+			{
+				if ((this._User_Type1 != value))
+				{
+					this.OnUser_Type1Changing(value);
+					this.SendPropertyChanging();
+					this._User_Type1 = value;
+					this.SendPropertyChanged("User_Type1");
+					this.OnUser_Type1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Type_User", Storage="_Users", ThisKey="User_Type_ID", OtherKey="User_Type_ID")]
+		public EntitySet<User> Users
+		{
+			get
+			{
+				return this._Users;
+			}
+			set
+			{
+				this._Users.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.User_Type = this;
+		}
+		
+		private void detach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.User_Type = null;
 		}
 	}
 	
@@ -1331,9 +1320,9 @@ namespace DAO.DB
 		
 		private int _BorrowHeader_ID;
 		
-		private System.Nullable<System.DateTime> _Borrow_Date;
+		private string _Borrow_Date;
 		
-		private System.Nullable<System.DateTime> _Receive_Date;
+		private string _Receive_Date;
 		
 		private System.Nullable<int> _User_ID;
 		
@@ -1349,9 +1338,9 @@ namespace DAO.DB
     partial void OnCreated();
     partial void OnBorrowHeader_IDChanging(int value);
     partial void OnBorrowHeader_IDChanged();
-    partial void OnBorrow_DateChanging(System.Nullable<System.DateTime> value);
+    partial void OnBorrow_DateChanging(string value);
     partial void OnBorrow_DateChanged();
-    partial void OnReceive_DateChanging(System.Nullable<System.DateTime> value);
+    partial void OnReceive_DateChanging(string value);
     partial void OnReceive_DateChanged();
     partial void OnUser_IDChanging(System.Nullable<int> value);
     partial void OnUser_IDChanged();
@@ -1385,8 +1374,8 @@ namespace DAO.DB
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Borrow_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Borrow_Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Borrow_Date", DbType="NVarChar(10)")]
+		public string Borrow_Date
 		{
 			get
 			{
@@ -1405,8 +1394,8 @@ namespace DAO.DB
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Receive_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Receive_Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Receive_Date", DbType="NVarChar(10)")]
+		public string Receive_Date
 		{
 			get
 			{
@@ -3027,7 +3016,7 @@ namespace DAO.DB
 		
 		private int _Register_fee_ID;
 		
-		private System.Nullable<System.DateTime> _Register_Date;
+		private string _Register_Date;
 		
 		private System.Nullable<double> _Register_fee1;
 		
@@ -3041,7 +3030,7 @@ namespace DAO.DB
     partial void OnCreated();
     partial void OnRegister_fee_IDChanging(int value);
     partial void OnRegister_fee_IDChanged();
-    partial void OnRegister_DateChanging(System.Nullable<System.DateTime> value);
+    partial void OnRegister_DateChanging(string value);
     partial void OnRegister_DateChanged();
     partial void OnRegister_fee1Changing(System.Nullable<double> value);
     partial void OnRegister_fee1Changed();
@@ -3075,8 +3064,8 @@ namespace DAO.DB
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Register_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Register_Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Register_Date", DbType="NVarChar(10)")]
+		public string Register_Date
 		{
 			get
 			{
@@ -3210,6 +3199,8 @@ namespace DAO.DB
 		
 		private EntitySet<Loginz> _Logins;
 		
+		private EntitySet<User> _Users;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3225,6 +3216,7 @@ namespace DAO.DB
 			this._Barcodes = new EntitySet<Barcode>(new Action<Barcode>(this.attach_Barcodes), new Action<Barcode>(this.detach_Barcodes));
 			this._BorrowDetails = new EntitySet<BorrowDetail>(new Action<BorrowDetail>(this.attach_BorrowDetails), new Action<BorrowDetail>(this.detach_BorrowDetails));
 			this._Logins = new EntitySet<Loginz>(new Action<Loginz>(this.attach_Logins), new Action<Loginz>(this.detach_Logins));
+			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
 			OnCreated();
 		}
 		
@@ -3307,6 +3299,19 @@ namespace DAO.DB
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Status_User", Storage="_Users", ThisKey="Status_ID", OtherKey="Status_ID")]
+		public EntitySet<User> Users
+		{
+			get
+			{
+				return this._Users;
+			}
+			set
+			{
+				this._Users.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3358,6 +3363,18 @@ namespace DAO.DB
 		}
 		
 		private void detach_Logins(Loginz entity)
+		{
+			this.SendPropertyChanging();
+			entity.Status = null;
+		}
+		
+		private void attach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.Status = this;
+		}
+		
+		private void detach_Users(User entity)
 		{
 			this.SendPropertyChanging();
 			entity.Status = null;
@@ -3515,164 +3532,6 @@ namespace DAO.DB
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.sysdiagrams")]
-	public partial class sysdiagram : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _name;
-		
-		private int _principal_id;
-		
-		private int _diagram_id;
-		
-		private System.Nullable<int> _version;
-		
-		private System.Data.Linq.Binary _definition;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void Onprincipal_idChanging(int value);
-    partial void Onprincipal_idChanged();
-    partial void Ondiagram_idChanging(int value);
-    partial void Ondiagram_idChanged();
-    partial void OnversionChanging(System.Nullable<int> value);
-    partial void OnversionChanged();
-    partial void OndefinitionChanging(System.Data.Linq.Binary value);
-    partial void OndefinitionChanged();
-    #endregion
-		
-		public sysdiagram()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_principal_id", DbType="Int NOT NULL")]
-		public int principal_id
-		{
-			get
-			{
-				return this._principal_id;
-			}
-			set
-			{
-				if ((this._principal_id != value))
-				{
-					this.Onprincipal_idChanging(value);
-					this.SendPropertyChanging();
-					this._principal_id = value;
-					this.SendPropertyChanged("principal_id");
-					this.Onprincipal_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diagram_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int diagram_id
-		{
-			get
-			{
-				return this._diagram_id;
-			}
-			set
-			{
-				if ((this._diagram_id != value))
-				{
-					this.Ondiagram_idChanging(value);
-					this.SendPropertyChanging();
-					this._diagram_id = value;
-					this.SendPropertyChanged("diagram_id");
-					this.Ondiagram_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_version", DbType="Int")]
-		public System.Nullable<int> version
-		{
-			get
-			{
-				return this._version;
-			}
-			set
-			{
-				if ((this._version != value))
-				{
-					this.OnversionChanging(value);
-					this.SendPropertyChanging();
-					this._version = value;
-					this.SendPropertyChanged("version");
-					this.OnversionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_definition", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary definition
-		{
-			get
-			{
-				return this._definition;
-			}
-			set
-			{
-				if ((this._definition != value))
-				{
-					this.OndefinitionChanging(value);
-					this.SendPropertyChanging();
-					this._definition = value;
-					this.SendPropertyChanged("definition");
-					this.OndefinitionChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
 	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3689,7 +3548,7 @@ namespace DAO.DB
 		
 		private string _Tel_Hand;
 		
-		private System.Nullable<System.DateTime> _DOB;
+		private string _DOB;
 		
 		private string _Email;
 		
@@ -3703,11 +3562,15 @@ namespace DAO.DB
 		
 		private System.Nullable<int> _Refree_ID;
 		
+		private System.Nullable<int> _Status_ID;
+		
 		private EntitySet<BorrowHeader> _BorrowHeaders;
 		
 		private EntitySet<Register_fee> _Register_fees;
 		
 		private EntityRef<Refree> _Refree;
+		
+		private EntityRef<Status> _Status;
 		
 		private EntityRef<User_Type> _User_Type;
 		
@@ -3725,7 +3588,7 @@ namespace DAO.DB
     partial void OnTel_LandChanged();
     partial void OnTel_HandChanging(string value);
     partial void OnTel_HandChanged();
-    partial void OnDOBChanging(System.Nullable<System.DateTime> value);
+    partial void OnDOBChanging(string value);
     partial void OnDOBChanged();
     partial void OnEmailChanging(string value);
     partial void OnEmailChanged();
@@ -3739,6 +3602,8 @@ namespace DAO.DB
     partial void OnUser_Type_IDChanged();
     partial void OnRefree_IDChanging(System.Nullable<int> value);
     partial void OnRefree_IDChanged();
+    partial void OnStatus_IDChanging(System.Nullable<int> value);
+    partial void OnStatus_IDChanged();
     #endregion
 		
 		public User()
@@ -3746,6 +3611,7 @@ namespace DAO.DB
 			this._BorrowHeaders = new EntitySet<BorrowHeader>(new Action<BorrowHeader>(this.attach_BorrowHeaders), new Action<BorrowHeader>(this.detach_BorrowHeaders));
 			this._Register_fees = new EntitySet<Register_fee>(new Action<Register_fee>(this.attach_Register_fees), new Action<Register_fee>(this.detach_Register_fees));
 			this._Refree = default(EntityRef<Refree>);
+			this._Status = default(EntityRef<Status>);
 			this._User_Type = default(EntityRef<User_Type>);
 			OnCreated();
 		}
@@ -3850,8 +3716,8 @@ namespace DAO.DB
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOB", DbType="Date")]
-		public System.Nullable<System.DateTime> DOB
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOB", DbType="NVarChar(10)")]
+		public string DOB
 		{
 			get
 			{
@@ -3998,6 +3864,30 @@ namespace DAO.DB
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status_ID", DbType="Int")]
+		public System.Nullable<int> Status_ID
+		{
+			get
+			{
+				return this._Status_ID;
+			}
+			set
+			{
+				if ((this._Status_ID != value))
+				{
+					if (this._Status.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStatus_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Status_ID = value;
+					this.SendPropertyChanged("Status_ID");
+					this.OnStatus_IDChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_BorrowHeader", Storage="_BorrowHeaders", ThisKey="User_ID", OtherKey="User_ID")]
 		public EntitySet<BorrowHeader> BorrowHeaders
 		{
@@ -4054,6 +3944,40 @@ namespace DAO.DB
 						this._Refree_ID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Refree");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Status_User", Storage="_Status", ThisKey="Status_ID", OtherKey="Status_ID", IsForeignKey=true)]
+		public Status Status
+		{
+			get
+			{
+				return this._Status.Entity;
+			}
+			set
+			{
+				Status previousValue = this._Status.Entity;
+				if (((previousValue != value) 
+							|| (this._Status.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Status.Entity = null;
+						previousValue.Users.Remove(this);
+					}
+					this._Status.Entity = value;
+					if ((value != null))
+					{
+						value.Users.Add(this);
+						this._Status_ID = value.Status_ID;
+					}
+					else
+					{
+						this._Status_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Status");
 				}
 			}
 		}

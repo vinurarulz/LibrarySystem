@@ -33,5 +33,16 @@ namespace DAO.Properties {
                 return ((string)(this["LibraryDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=legendsy.database.windows.net;Initial Catalog=LibraryDB;User ID=testA" +
+            "ddmin;Password=pass@123")]
+        public string LibraryDBConnectionString1 {
+            get {
+                return ((string)(this["LibraryDBConnectionString1"]));
+            }
+        }
     }
 }

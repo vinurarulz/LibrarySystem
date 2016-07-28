@@ -19,8 +19,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition Width="4*"/>
                     </Grid.ColumnDefinitions>
-                    <Label x:Name="label" Content="Employe ID :" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="97" Grid.ColumnSpan="2"/>
-                    <Label x:Name="label_Copy" Content="Employe Name :" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="97" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label" Content="User ID :" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="97" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label_Copy" Content="User Name :" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="97" Grid.ColumnSpan="2"/>
                     <Label x:Name="label_Copy1" Content="Contact no (Hand) :" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="27" Width="109" Grid.ColumnSpan="2"/>
                     <Label x:Name="label_Copy2" Content="Email :" HorizontalAlignment="Left" Margin="11,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="97" Grid.ColumnSpan="2"/>
                     <Label x:Name="label_Copy3" Content="Address 1 :" HorizontalAlignment="Left" Margin="11,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.346" Height="26" Width="96" Grid.ColumnSpan="2"/>
@@ -31,7 +31,7 @@
                     <TextBox x:Name="txt_add3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46.4,346,0,0" Grid.Column="1"/>
                     <TextBox x:Name="txt_add2" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46.4,313,0,0" Grid.Column="1"/>
                     <TextBox x:Name="txt_add1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46.4,281,0,0" Grid.Column="1"/>
-                    <TextBox x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46.4,250,0,0" Grid.Column="1"/>
+                    <TextBox x:Name="txt_email" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="245" Margin="46.4,250,0,0" Grid.Column="1"/>
                     <TextBox x:Name="txt_telhand" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46,146,0,0" Grid.Column="1"/>
                     <TextBox x:Name="txt_emp_name" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="46,115,0,0" Grid.Column="1"/>
                     <ComboBox x:Name="combo_status" HorizontalAlignment="Left" Margin="46.4,377,0,0" VerticalAlignment="Top" Width="245" Height="22" ToolTip="" Grid.Column="1"/>
@@ -79,6 +79,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <DataGrid x:Name="dataGrid1" Margin="521,30,0,0" VerticalAlignment="Top" Height="445" HorizontalAlignment="Left" Width="811"/>
+        <DataGrid x:Name="User_dataGrid1" Margin="521,30,0,0" VerticalAlignment="Top" Height="445" HorizontalAlignment="Left" Width="811"/>
     </Grid>
 </Window>

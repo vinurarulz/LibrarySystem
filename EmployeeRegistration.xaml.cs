@@ -22,47 +22,27 @@ namespace BlackCrystal
         public EmployeRegistration()
         {
             InitializeComponent();
-            //using (DB_ClassDataContext db = new DB_ClassDataContext())
-            //{
+            combo_status.Items.Add("Active");
+            combo_status.Items.Add("Deactive");
 
-            //    dataGrid1.ItemsSource = db.Employees;
-                
-                
-
-            //}
-            //value set combo box
-
-            try { 
-            using (DB_ClassDataContext db = new DB_ClassDataContext())
+            try
             {
-                var user = (from u in db.Employees
-
-                            select u.FName).SingleOrDefault().ToList();
-                    combo_status.Items.Add(user);
-
+                using (DB_ClassDataContext db = new DB_ClassDataContext())
+                {
+                    var maxValue = db.Employees.Max(x => x.Emp_ID);
+                    txt_emp_id.Text = (maxValue + 1).ToString();
+                    dataGrid1.ItemsSource = db.Employees;
+                }
             }
-
-            }catch(Exception ex)
+            catch (Exception)
             {
-
+                txt_emp_id.Text = 1 + "";
             }
         }
 
-        int empid;
-        string nic;
-        string fname;
-        string lname;
-        string tell;
-        string email;
-        string add1;
-        string add2;
-        string add3;
-
-        int logid;
-        string uname;
-        string pwd;
-        int status_id;
-        string status_discrip;
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
 
         private void btn_update1_Click(object sender, RoutedEventArgs e)
         {
@@ -70,57 +50,45 @@ namespace BlackCrystal
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            empid = Convert.ToInt32(txt_emp_id.Text);
-            nic = txt_nic.Text;
-            fname = txt_fname.Text;
-            lname = txt_lname.Text;
-            tell = txt_contac.Text;
-            email = txt_email.Text;
-            add1 = txt_add1.Text;
-            add2 = txt_add2.Text;
-            add3 = txt_add3.Text;
-
-            uname = txt_uname.Text;
-            pwd = txt_pwd.Text;
-           // status_discrip = combo_status.SelectedItem.ToString();
-            
-
             try
             {
                 using (DB_ClassDataContext db = new DB_ClassDataContext())
                 {
-                    
-                    Employee emp =new Employee();
-                    Loginz log = new Loginz();
-                    Status st = db.Status.SingleOrDefault(x => x.Status1 == status_discrip);
+                  //  Status st = db.Status.SingleOrDefault(x => x.Status1 == combo_status.SelectedItem.ToString());
+                  //  User_Type utype = db.User_Types.SingleOrDefault(x => x.User_Type_ID == 2);
 
+                    Employee emp = new Employee();
+                    emp.Emp_NIC = txt_nic.Text;
+                    emp.FName = txt_fname.Text;
+                    emp.LName = txt_lname.Text;
+                    emp.Tel = txt_contac.Text;
+                    emp.Email = txt_email.Text;
+                    emp.Add1 = txt_add1.Text;
+                    emp.Add2 = txt_add2.Text;
+                    emp.Add3 = txt_add3.Text;
+                    db.Employees.InsertOnSubmit(emp);
+                    db.SubmitChanges();
 
-                    emp.Emp_NIC = nic;
-                    emp.FName = fname;
-                    emp.LName = lname;
-                    emp.Tel = tell;
-                    emp.Email = email;
-                    emp.Add1 = add1;
-                    emp.Add2 = add2;
-                    emp.Add3 = add3;
-                   
-                   log.UserName = uname;
-                   log.Pwd = pwd;
-                   log.Emp_ID = emp.Emp_ID;
-                   log.Status_ID = st.Status_ID;
-                   db.Employees.InsertOnSubmit(emp);
-                   db.Loginzs.InsertOnSubmit(log);
-                   db.SubmitChanges();
+                    //Loginz log = new Loginz();
+                    //log.UserName = txt_uname.Text; ;
+                    //log.Pwd = txt_pwd.Text;
+                    //log.Emp_ID = emp.Emp_ID;
+                    //log.Status_ID = st.Status_ID;
+                    //log.User_Type_ID = utype.User_Type_ID;
+                    //db.Loginzs.InsertOnSubmit(log);
+                    //db.SubmitChanges();
 
-                    MessageBox.Show("Data succusfuly Inserted");
+                    MessageBox.Show("Employee Data inserted successfully !", "Employee Registration", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Data not Inserted");
+                MessageBox.Show(" " + ex);
             }
 
         }
+
     }
 }
